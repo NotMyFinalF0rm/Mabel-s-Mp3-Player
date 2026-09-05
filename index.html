@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mabel-86 Saloon Jukebox & FX Rig</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="jukebox-casing">
+    
+    <!-- Header Branding -->
+    <div class="branding">
+      <h2>MABEL-86 RO STEREO</h2>
+      <div class="status-lamp" id="power-lamp"></div>
+    </div>
+
+    <!-- LCD Viewport -->
+    <div class="lcd-viewport">
+      <div class="lcd-meta">
+        <span id="track-title">NO TRACKS LOADED</span>
+        <span id="time-display">00:00</span>
+      </div>
+      <canvas id="canvas-visualizer"></canvas>
+      <div class="fx-indicators">
+        <span class="tag" id="tag-vinyl">VINYL: OFF</span>
+        <span class="tag" id="tag-saloon">SALOON: OFF</span>
+      </div>
+    </div>
+
+    <!-- Playlist & File Input -->
+    <div class="playlist-rack">
+      <div class="file-picker">
+        <label for="audio-file-input">ADD TRACKS (.MP3 / .WAV):</label>
+        <input type="file" id="audio-file-input" accept="audio/*" multiple>
+      </div>
+      <div class="playlist-box">
+        <ul id="playlist-items">
+          <li>Playlist empty. Drop audio files above.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Deck Controls -->
+    <div class="deck-controls">
+      
+      <div class="btn-rack">
+        <button class="retro-btn play-mode" id="btn-play">PLAY</button>
+        <button class="retro-btn" id="btn-pause">PAUSE</button>
+        <button class="retro-btn" id="btn-next">NEXT</button>
+      </div>
+
+      <div class="toggle-rack">
+        <button class="toggle-btn" id="btn-vinyl">VINYL SIM</button>
+        <button class="toggle-btn" id="btn-saloon">SALOON REVERB</button>
+      </div>
+
+      <div class="fader-group">
+        <div class="fader">
+          <label>VOLUME <span id="vol-val">80%</span></label>
+          <input type="range" id="fader-volume" min="0" max="1" step="0.01" value="0.8">
+        </div>
+
+        <div class="fader">
+          <label>PITCH / SPEED <span id="speed-val">1.0x</span></label>
+          <input type="range" id="fader-speed" min="0.5" max="1.5" step="0.05" value="1.0">
+        </div>
+
+        <div class="fader">
+          <label>BASS BOOST <span id="bass-val">0dB</span></label>
+          <input type="range" id="fader-bass" min="0" max="12" step="1" value="0">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="deck-footer">
+      <span>CUSTOM HARDWARE FOR MABEL'S SALOON // REV 2.4</span>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

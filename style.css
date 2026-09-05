@@ -1,0 +1,229 @@
+:root {
+  --wood-dark: #1e0a03;
+  --wood-mid: #3d1708;
+  --wood-border: #7c3a13;
+  --brass-gold: #f59e0b;
+  --lcd-green: #22c55e;
+  --lcd-bg: #030712;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  background-color: #0d0502;
+  font-family: 'VT323', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  letter-spacing: 1px;
+}
+
+/* Main Casing Container */
+.jukebox-casing {
+  background: var(--wood-mid);
+  border: 6px solid var(--wood-border);
+  border-radius: 16px;
+  padding: 20px;
+  width: 420px;
+  display: block;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.branding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #78350f;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.branding h2 {
+  color: var(--brass-gold);
+  font-size: 22px;
+}
+
+.status-lamp {
+  width: 10px;
+  height: 10px;
+  background-color: #7f1d1d;
+  border-radius: 50%;
+}
+
+.status-lamp.active {
+  background-color: var(--lcd-green);
+  box-shadow: 0 0 10px var(--lcd-green);
+}
+
+.lcd-viewport {
+  background-color: var(--lcd-bg);
+  border: 3px solid #1e293b;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.lcd-meta {
+  color: var(--lcd-green);
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#canvas-visualizer {
+  width: 100%;
+  height: 85px;
+  background-color: #000000;
+  border-radius: 4px;
+  display: block;
+}
+
+.fx-indicators {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  background: #111827;
+  color: #6b7280;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #1f2937;
+}
+
+.tag.active {
+  color: var(--brass-gold);
+  border-color: var(--brass-gold);
+}
+
+/* Playlist Layout */
+.playlist-rack {
+  margin-bottom: 16px;
+}
+
+.file-picker label {
+  font-size: 15px;
+  color: var(--brass-gold);
+  display: block;
+  margin-bottom: 4px;
+}
+
+input[type="file"] {
+  width: 100%;
+  font-family: inherit;
+  font-size: 13px;
+  color: #fef08a;
+  background: var(--wood-dark);
+  border: 1px solid #78350f;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.playlist-box {
+  background: var(--wood-dark);
+  border: 1px solid #78350f;
+  border-radius: 4px;
+  max-height: 90px;
+  overflow-y: auto;
+}
+
+#playlist-items {
+  list-style: none;
+  font-size: 14px;
+}
+
+#playlist-items li {
+  padding: 4px 8px;
+  color: #d1d5db;
+  border-bottom: 1px solid #2d1206;
+  cursor: pointer;
+}
+
+#playlist-items li.active {
+  background-color: #78350f;
+  color: #fef08a;
+  font-weight: bold;
+}
+
+/* Deck Controls */
+.deck-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-rack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.retro-btn, .toggle-btn {
+  background: linear-gradient(180deg, #92400e 0%, #78350f 100%);
+  color: #fef3c7;
+  font-family: inherit;
+  font-size: 16px;
+  border: none;
+  border-bottom: 3px solid #361405;
+  padding: 8px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.retro-btn:active, .toggle-btn:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+.retro-btn.play-mode {
+  background: linear-gradient(180deg, #16a34a 0%, #15803d 100%);
+}
+
+.toggle-rack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(180deg, #d97706 0%, #b45309 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.fader-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fader label {
+  font-size: 15px;
+  color: var(--brass-gold);
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--brass-gold);
+  cursor: pointer;
+}
+
+.deck-footer {
+  margin-top: 16px;
+  text-align: center;
+  color: #78350f;
+  font-size: 13px;
+}
