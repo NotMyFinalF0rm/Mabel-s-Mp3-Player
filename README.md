@@ -1,45 +1,62 @@
-# 🎵 Mabel-86 Saloon Jukebox & FX Rig
+# Pixel RPG Engine
 
-A lightweight, retro-styled web audio processing application built using vanilla HTML5, CSS3, and JavaScript. Inspired by classic vintage saloon jukeboxes, this app enables users to load local audio files, perform real-time pitch and low-frequency equalizer adjustments, and view a dynamic audio spectrum visualizer.
+A lightweight, top-down 2D action RPG engine built completely from scratch using plain JavaScript and HTML5 Canvas. No heavy frameworks, no external libraries, and zero build steps required—just pure web fundamentals.
 
-![Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS-amber)
-![Platform](https://img.shields.io/badge/Engine-Web%20Audio%20API-green)
-
----
-
-## ✨ Key Features
-
-* **Custom Web Audio Engine:** Dynamically load and render local `.mp3` and `.wav` audio files using native Web Audio API pipelines.
-* **Real-time Signal Processing:**
-  * **Master Volume Control:** Smooth gain adjustments with dynamic display readouts.
-  * **Playback Rate & Pitch Adjustment:** Granular speed control ranging from `0.5x` to `1.5x`.
-  * **Low-Shelf Bass Equalizer:** Dedicated low-frequency EQ filter boosting bass up to `+12dB`.
-* **Dynamic LCD Visualizer:** Real-time frequency spectrum analysis rendered on an HTML5 `<canvas>` element using an `AnalyserNode`.
-* **Interactive Playlist Management:** Functional playlist rack supporting file queueing, track selection, and automated sequential playback.
-* **Skeuomorphic Interface:** Formatted using modular CSS, mimicking a vintage dark-wood physical audio console.
+I built this project to experiment with core game development concepts like tilemaps, custom collision detection, state switching, and audio synthesis right inside the browser.
 
 ---
 
-## 🛠️ Technology Stack
+## 🎮 Features
 
-* **Frontend:** Standard HTML5 structure and custom CSS3 (Flexbox & Grid layout modules).
-* **Core Logic:** Vanilla JavaScript (ES6+ standard).
-* **Audio Processing:** Native HTML5 `Audio` API and `AudioContext` (`BiquadFilterNode`, `AnalyserNode`, `MediaElementAudioSourceNode`).
-* **Typography:** Embedded [VT323](https://fonts.google.com/specimen/VT323) monospace typeface via Google Fonts.
-
----
-
-## ⚠️ Browser Compatibility & Troubleshooting
-
-### Brave Browser Users
-Due to strict default privacy and fingerprinting protections in the Brave Browser, the Web Audio API context may be blocked from processing local audio streams. 
-
-* **Fix:** Click the **Brave Shields icon** (orange lion) in your address bar and toggle **Shields Down** for this site. This allows the audio context and spectrum canvas to function properly.
+* **Multi-Tilemap System:** Smooth transitions between an Overworld map and a Dungeon level via interactive portals.
+* **Custom Combat Mechanics:** Real-time sword slashes alongside mana-based ranged spells (Fireballs).
+* **Multi-Phase Boss Battles:**
+  * **Shadow Demon:** Features a 3-way spread shot in Phase 1 and transitions into an enraged, high-speed 8-direction ring blast in Phase 2.
+  * **Fire Drake:** Tracks the player and launches heavy targeted fireballs.
+* **Procedural Sound Engine:** Uses the Web Audio API to synthesize retro retro-style sound effects on the fly for hits, swings, spell casts, item pickups, and coins—no audio files needed.
+* **NPCs & Dialogue System:** Built-in interactive NPC dialogue box with step-through text functionality.
+* **Player Progression:** Full HP/MP management, XP leveling system, gold collection, and an interactive inventory bar.
 
 ---
 
-## 🚀 Installation & Local Execution
+## 🚀 Getting Started
 
-1. Clone or download this repository to your local directory:
-   ```bash
-   git clone [https://github.com/your-username/mabel-jukebox.git](https://github.com/your-username/mabel-jukebox.git)
+Since this is built with standard Web technology, there are no dependencies or build steps (`npm install`, Webpack, Vite, etc.). You just need a modern web browser.
+
+### Option 1: VS Code Live Server (Recommended)
+
+1. Clone or download this repository to your machine.
+2. Open the project folder in **VS Code**.
+3. Install the **Live Server** extension if you haven't already.
+4. Right-click `index.html` and select **Open with Live Server**.
+
+### Option 2: Direct File Launch
+
+1. Download the project files into a single directory.
+2. Double-click `index.html` to open it in Chrome, Firefox, Safari, or Edge.
+
+> **Note:** Modern browsers require a user interaction (like a key press or screen click) before audio can play. If you don't hear sound effects right away, just press any control key or click inside the window.
+
+---
+
+## 🕹️ Controls
+
+| Action | Key / Input |
+| :--- | :--- |
+| **Move** | `W`, `A`, `S`, `D` or `Arrow Keys` |
+| **Melee Attack** | `Spacebar` or `J` |
+| **Cast Fireball** | `Q` or `1` |
+| **Use HP Potion** | `H` |
+| **Use MP Potion** | `M` |
+| **Interact / Talk** | `E` |
+
+---
+
+## 📁 Project Structure
+
+Keep all files in the same root folder so the references work seamlessly:
+
+```text
+├── index.html       # Canvas setup, HUD markup, and dialogue UI
+├── style.css        # Pixelated UI styling and layout overlays
+└── main.js          # Audio synth, input handler, engine loop, and game logic
