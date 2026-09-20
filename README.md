@@ -6,7 +6,7 @@ I built this project to learn how to manipulate audio streams with the HTML5 Web
 
 ---
 
-## ✨ Features
+## Features
 
 * **Custom Audio Engine:** Play, pause, skip, seek, and adjust volume in real time using native HTML5 Audio methods.
 * **Dynamic Playlist Management:** Add audio files from your local storage, organize tracks, and auto-advance to the next song when one ends.
@@ -16,7 +16,7 @@ I built this project to learn how to manipulate audio streams with the HTML5 Web
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 Since this is built using standard Web technology, there are no dependencies, node modules, or build steps required.
 
@@ -34,7 +34,7 @@ Since this is built using standard Web technology, there are no dependencies, no
 
 ---
 
-## 🕹️ How to Use
+## How to Use
 
 1. Click **Add Track** or use the file upload button to load `.mp3`, `.wav`, or `.ogg` files from your computer.
 2. Click any song in your playlist to select and play it.
@@ -43,7 +43,7 @@ Since this is built using standard Web technology, there are no dependencies, no
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 Keep all three core files in the same directory:
 
